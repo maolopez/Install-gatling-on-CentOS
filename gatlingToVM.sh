@@ -2,10 +2,10 @@
 
 # Installing Gatling on CentOS latest version by script
 # Bundle Gatling 2.2.5 with Java 8u144
-# VERSION 2.2.5
+# VERSION 2.3.1
 
 #Environmental variables
-GATLING_VERSION=2.2.5
+GATLING_VERSION=2.3.1
 JAVA_HOME=/usr/java/default
 
 echo "Update CentOS Software repository"
@@ -23,11 +23,11 @@ echo "Install unzip"
 yum -y install unzip
 
 echo "Install Gatling"
-curl -L -v http://repo1.maven.org/maven2/io/gatling/gatling-bundle/${GATLING_VERSION}/gatling-bundle-${GATLING_VERSION}-bundle.zip -o gatling-bundle-${GATLING_VERSION}-bundle.zip
+curl -L -v https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/${GATLING_VERSION}/gatling-charts-highcharts-bundle-${GATLING_VERSION}-bundle.zip  -o gatling-bundle-${GATLING_VERSION}-bundle.zip
 chown -R user:user gatling-bundle-${GATLING_VERSION}-bundle.zip
 unzip gatling-bundle-${GATLING_VERSION}-bundle.zip
 rm gatling-bundle-${GATLING_VERSION}-bundle.zip
-mv gatling-bundle-${GATLING_VERSION} /opt/
+mv gatling-charts-highcharts-bundle-${GATLING_VERSION} /opt/
 chown -R user:user /opt/gatling-bundle-${GATLING_VERSION}
 
 echo "Check if the Gatling folder has been installed."
